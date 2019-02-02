@@ -44,7 +44,7 @@ export default function videoBlock () {
       video[0].currentTime = 0;
     };
 
-    /* w.on('scroll', function () {
+    w.on('scroll', function () {
       const
         sT = $(this).scrollTop(),
         posTop = section.position('html').top;
@@ -54,7 +54,7 @@ export default function videoBlock () {
       } else {
         if (video.hasClass('is-playing')) video[0].play();
       }
-    }); */
+    });
   });
 };
 /* eslint-enable */
