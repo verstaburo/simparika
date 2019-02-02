@@ -3,6 +3,7 @@
 .slider {
   display: block;
   overflow: visible;
+  touch-action: none;
 
   $b: &;
 
