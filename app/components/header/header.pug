@@ -1,0 +1,23 @@
+- var links = ['Инструкция', 'Пройти тест', 'Вопросы и ответы', 'Статьи'];
+- var n = 0;
+- var myIndex = -1;
+- var activeClass;
+
+mixin header(index)
+  if !index
+    myIndex = -1;
+
+  +b.header&attributes(attributes)
+    .container.container_full.header__container
+      +e.A.logo
+        img(src="assets/images/logo.svg")
+      +e.NAV.nav
+        +e.UL.menu
+          each link in links
+            - activeClass = n === index ? 'is-active' : '';
+            +e.LI.item
+              +e.A.link(href="#" class=activeClass)!= link
+            - n++;
+
+        +button()(href="shops.html").__button Где купить?
+      +burger-button.__burger

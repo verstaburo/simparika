@@ -1,0 +1,5 @@
+mixin info-item(image, text)
+  +b.info-item&attributes(attributes)
+    +e.image
+      img(src=image)
+    +e.P.text!= text

@@ -2,6 +2,7 @@ import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
 import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
+import windowResize from '../blocks/js-functions/window';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
 import { selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form-elements/form-elements';
@@ -15,6 +16,8 @@ import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
+import header from '../components/header/header';
+import videoBlock from '../components/video-block/video-block';
 
 const $ = window.$;
 
@@ -35,4 +38,8 @@ $(() => {
   numberinput();
   maps();
   scrollanimation();
+
+  header();
+  videoBlock();
+  windowResize();
 });

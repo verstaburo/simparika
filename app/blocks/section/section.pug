@@ -1,0 +1,16 @@
+mixin section()
+  +b.SECTION.section&attributes(attributes)
+    .container
+      block
+
+mixin section-header(title)
+  +e.header&attributes(attributes)
+    +e.H2.title!= title
+
+mixin section-content()
+  +e.content&attributes(attributes)
+    block
+
+mixin section-footer()
+  +e.footer&attributes(attributes)
+    block

@@ -12,12 +12,30 @@
 @import '../pages/**/*';
 
 .container {
-  width: $container-width;
+  max-width: 100%;
   padding-left: $container-padding;
   padding-right: $container-padding;
   margin: 0 auto;
-  max-width: 100%;
+  width: $container-width;
   box-sizing: border-box;
+
+  @include screen('lg') {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  @include screen('sm') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &_full {
+    width: 100%;
+  }
+}
+
+body {
+  overflow: hidden;
 }
 
 .js-sr {
