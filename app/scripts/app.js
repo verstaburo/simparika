@@ -17,6 +17,7 @@ import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
 import header from '../components/header/header';
+import products from '../components/products/products';
 import videoBlock from '../components/video-block/video-block';
 
 const $ = window.$;
@@ -42,4 +43,5 @@ $(() => {
   header();
   videoBlock();
   windowResize();
+  products();
 });

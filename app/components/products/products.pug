@@ -1,0 +1,26 @@
+- var dogArray = [['assets/images/icon-dog_1.svg', '1,3-2,5 кг', true], ['assets/images/icon-dog_2.svg', '2,6-5,0 кг'], ['assets/images/icon-dog_3.svg', '5,1-10,0 кг'], ['assets/images/icon-dog_4.svg', '10,1-20,0 кг'], ['assets/images/icon-dog_5.svg', '20,1-40,0 кг'], ['assets/images/icon-dog_6.svg', '40,1-60,0 кг']];
+
+mixin products()
+  +b.products&attributes(attributes)
+    .container
+      +e.SELECT.select.js-product-select
+        each dog in dogArray
+          - var isSelected = !!dog[2];
+          option(value=dog[1] selected=isSelected)!= dog[1]
+
+      +e.navigation
+        each dog in dogArray
+          - var activeClass = dog[2] ? 'is-active' : '';
+          +e.BUTTON.button(type="button" class=activeClass).js-dog-button
+            +e.IMG.dog(src=dog[0])
+            +e.P.weight!= dog[1]
+            +icon('dog-bg').__icon
+
+    +e.products
+      each product in getData('products')
+        - var modificator = product[3];
+        - var activeClass = product[4] ? ' is-active' : '';
+        +e.item(class=activeClass)
+          +e.wrapper
+            +product(product[0], product[1], product[2])(class=modificator + activeClass).__product.js-dog-button
+

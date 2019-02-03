@@ -32,22 +32,29 @@ block content
     +section-footer
       +button()(href="instruction.html") Инструкция
 
+  +section-nocontainer._products
+    .container
+      +section-header('Подберите правильную дозировку')
+        +e.description
+          p Средство от блох и клещей подходит для собак мелких и крупных пород. Дозировка зависит от веса и возраста собаки. Препарат рассчитан на собак в возрасте от 8 недель и весом от 1,3 кг, поэтому подойдет даже для мелких пород. Для собак свыше 60 кг подбирают комбинацию таблеток, согласно инструкции к препарату.
+    +section-content._margin_three
+      +products
+
   +section
     +section-content
       +banner('assets/images/dog_5.png', 'Пройдите тест и узнайте, как защитить вашу собаку от наружных паразитов!')
         +button()(href="test.html").__button Пройти тест
-
 
   +section._grey
     +section-header('Вопросы и ответы')
     +section-content._margin_two
       +slider(true).js-faq-slider
         +grid.swiper-wrapper
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +faq-card('assets/images/dog_1.png', 'После приема таблетки можно ли купать собаку? Не снизится ли противопаразитарное действие?', 'Одним из преимуществ таблеток является то, что купание и мытье не снижает действия препарата. Вы можете мыть вашу собаку, а ваша собака может наслаждаться летними заплывами.')
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +faq-card('assets/images/dog_2.png', 'При укусе клеща возможно заражение пироплазмозом – опасным для собак заболеванием. Защитит ли Симпарика от пироплазмоза мою собаку?', 'Симпарика не только вызывает гибель иксодовых клещей, но и снижает риск заражения такими опасными болезнями, передаваемыми иксодовыми клещами, как: пироплазмоз (бабезиоз), Болезнь Лайма (боррелиоз) и анаплазмоз.')._center._blue
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +faq-card('assets/images/dog_3.png', 'Есть ли ограничения при применении Симпарики?', 'Препарат Симпарика можно применять щенкам с 8-недельного возраста, всем породам собак весом от 1,3 кг. Если у вашей собаки есть хронические заболевания почек и печени –проконсультируйтесь с ветеринарным врачом.')._right._purple
     +section-footer._margin_one
       +button()(href="faq.html") Смотреть все
@@ -59,11 +66,11 @@ block content
     +section-content._margin_one
       +slider(true).js-articles-slider
         +grid.grid_size_two.swiper-wrapper
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +article-card('assets/images/poster.jpg', 'Первая помощь при укусе клеща', 'Если клещ присосался к коже человека, то снимать его следует особенно осторожно, чтобы не оборвать хоботок, который глубоко и сильно укрепляется на весь период присасывания.')(href="instruction.html")
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +article-card('assets/images/poster.jpg', 'Как подготовиться к отпуску с питомцем', 'Если клещ присосался к коже человека, то снимать его следует особенно осторожно, чтобы не оборвать хоботок, который глубоко и сильно укрепляется на весь период присасывания.')(href="instruction.html")
-          +col({'xl': 4, 'md': 12}).grid__col_grow.swiper-slide
+          +col({'xl': 4, 'sm': 12}).grid__col_grow.swiper-slide
             +article-card('assets/images/poster.jpg', 'Как вычислить и устранить паразитов?', 'Если клещ присосался к коже человека, то снимать его следует особенно осторожно, чтобы не оборвать хоботок, который глубоко и сильно укрепляется на весь период присасывания.')(href="instruction.html")
     +section-footer._margin_one
       +button()(href="articles.html") Смотреть все

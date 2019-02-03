@@ -4,38 +4,38 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 131px 0 27px;
-
-  @include screen('lg') {
-    padding-top: 125px;
-    padding-bottom: 13px;
-  }
-
-  @include screen('sm') {
-    padding-top: 42px;
-    padding-bottom: 11px;
-  }
-
-  &_small {
-    padding-top: 132px;
-    padding-bottom: 129px;
-
-    @include screen('lg') {
-      padding-top: 97px;
-      padding-bottom: 148px;
-    }
-
-    @include screen('sm') {
-      padding-top: 58px;
-      padding-bottom: 71px;
-    }
-  }
 
   $b: &;
 
   &__container {
     position: relative;
     z-index: 2;
+    padding: 131px 0 317px;
+
+    @include screen('lg') {
+      padding-top: 125px;
+      padding-bottom: 192px;
+    }
+
+    @include screen('sm') {
+      padding-top: 42px;
+      padding-bottom: 95px;
+    }
+
+    #{$b}_small & {
+      padding-top: 132px;
+      padding-bottom: 129px;
+
+      @include screen('lg') {
+        padding-top: 97px;
+        padding-bottom: 148px;
+      }
+
+      @include screen('sm') {
+        padding-top: 58px;
+        padding-bottom: 71px;
+      }
+    }
   }
 
   &__header {
@@ -129,7 +129,7 @@
   }
 
   &__icon {
-    transition: opacity $ease-main;
+    transition: opacity $ease-main, transform $ease-main;
     position: absolute;
     left: 0;
     top: 0;
@@ -141,14 +141,17 @@
 
       #{$b}__playbutton.is-active & {
         opacity: 0;
+        transform: scale(.8);
       }
     }
 
     &:last-child {
       opacity: 0;
+      transform: scale(.8);
 
       #{$b}__playbutton.is-active & {
         opacity: 1;
+        transform: scale(1);
       }
     }
   }
@@ -159,15 +162,19 @@
     line-height: normal;
     margin-top: 271px;
     text-align: left;
+    position: absolute;
+    left: 0;
+    bottom: 27px;
+    width: 100%;
 
     @include screen('lg') {
+      bottom: 13px;
       font-size: 12px;
-      margin-top: 162px;
     }
 
     @include screen('sm') {
+      bottom: 11px;
       font-size: 10px;
-      margin-top: 70px;
     }
   }
 

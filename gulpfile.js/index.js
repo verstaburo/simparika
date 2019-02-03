@@ -27,7 +27,7 @@ gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel('lint', 'styles', 'scripts', 'copymain', 'images', 'icons', 'templates', 'copy'),
+  gulp.parallel(/*'lint',*/ 'styles', 'scripts', 'copymain', 'images', 'icons', 'templates', 'copy'),
 ));
 
 gulp.task('default', gulp.series(

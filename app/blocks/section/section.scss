@@ -1,20 +1,56 @@
 .section {
   display: block;
-  padding: 96px 0;
+  padding: 89px 0 96px;
   position: relative;
 
   @include screen('lg') {
-    padding: 80px 0;
+    padding: 76px 0 80px;
   }
 
   @include screen('sm') {
-    padding: 35px 0;
+    padding: 33px 0 35px;
   }
 
   $b: &;
 
   &_grey {
     background-color: rgba(76, 76, 76, 0.04);
+  }
+
+  &_products {
+    @include screen('lg') {
+      padding-bottom: 0;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.67;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include screen('lg') {
+      font-size: 12px;
+      line-height: 1.84;
+      max-width: 670px;
+    }
+
+    @include screen('sm') {
+      line-height: 1.67;
+    }
+
+    &:not(:first-child) {
+      margin-top: 9px;
+
+      @include screen('lg') {
+        margin-top: 21px;
+      }
+
+      @include screen('sm') {
+        margin-top: 12px;
+      }
+    }
   }
 
   &_line {
@@ -45,7 +81,7 @@
   &__title {
     font-family: $font-second;
     font-size: 50px;
-    line-height: normal;
+    line-height: 1.5;
     color: $color-blue-dark;
     text-align: center;
 
@@ -60,42 +96,56 @@
 
   &__content {
     &:not(:first-child) {
-      margin-top: 72px;
+      margin-top: 65px;
 
       @include screen('lg') {
-        margin-top: 22px;
+        margin-top: 18px;
       }
 
       @include screen('sm') {
-        margin-top: 26px;
+        margin-top: 23px;
       }
     }
 
     &_margin {
       &_one {
         &:not(:first-child) {
-          margin-top: 82px;
+          margin-top: 76px;
 
           @include screen('lg') {
-            margin-top: 25px;
+            margin-top: 21px;
           }
 
           @include screen('sm') {
-            margin-top: 14px;
+            margin-top: 16px;
           }
         }
       }
 
       &_two {
         &:not(:first-child) {
-          margin-top: 154px;
+          margin-top: 147px;
 
           @include screen('lg') {
-            margin-top: 71px;
+            margin-top: 67px;
           }
 
           @include screen('sm') {
-            margin-top: 77px;
+            margin-top: 74px;
+          }
+        }
+      }
+
+      &_three {
+        &:not(:first-child) {
+          margin-top: 124px;
+
+          @include screen('lg') {
+            margin-top: 21px;
+          }
+
+          @include screen('sm') {
+            margin-top: 17px;
           }
         }
       }

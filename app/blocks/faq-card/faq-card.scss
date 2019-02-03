@@ -47,7 +47,7 @@
     }
 
     #{$b}_center & {
-      @include screen('md', min) {
+      @include screen('sm', min) {
         left: 0;
         right: 0;
         margin: auto;
@@ -55,7 +55,7 @@
     }
 
     #{$b}_right & {
-      @include screen('md', min) {
+      @include screen('sm', min) {
         left: unset;
         right: -8px;
       }

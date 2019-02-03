@@ -50,9 +50,7 @@ export default function videoBlock () {
         posTop = section.position('html').top;
 
       if (sT > posTop + section.outerHeight() || sT < posTop - w.height()) {
-        if (video.hasClass('is-playing')) video[0].pause();
-      } else {
-        if (video.hasClass('is-playing')) video[0].play();
+        if (video.hasClass('is-playing')) button[0].click();
       }
     });
   });

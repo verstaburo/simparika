@@ -3,9 +3,14 @@ mixin section()
     .container
       block
 
+mixin section-nocontainer()
+  +b.SECTION.section&attributes(attributes)
+    block
+
 mixin section-header(title)
   +e.header&attributes(attributes)
     +e.H2.title!= title
+    block
 
 mixin section-content()
   +e.content&attributes(attributes)

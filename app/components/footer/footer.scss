@@ -18,7 +18,7 @@
       order: 1000;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       padding: 7px 0;
     }
   }
@@ -32,7 +32,7 @@
       padding-bottom: 30px;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       padding-top: 16px;
       padding-bottom: 16px;
     }
@@ -43,7 +43,7 @@
       padding: 0 5px !important;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       padding: 0 15px !important;
     }
   }
@@ -59,7 +59,7 @@
       letter-spacing: .035em;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       font-size: 11px;
       line-height: 1.4;
     }
@@ -75,7 +75,7 @@
       margin: 0 20px;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       margin: 0;
       display: block;
     }
@@ -89,7 +89,7 @@
       padding: 18px 19px 0;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       padding: 0;
       width: 100% !important;
       margin-top: 5px;
@@ -107,7 +107,7 @@
         margin-top: 3px;
       }
 
-      @include screen('md') {
+      @include screen('sm') {
         font-size: 10px;
         margin-top: 0;
         line-height: 2;
@@ -126,14 +126,14 @@
         line-height: 1.67;
       }
 
-      @include screen('md') {
+      @include screen('sm') {
         font-size: 10px;
         line-height: 2;
       }
 
       p {
         &:not(:first-child) {
-          @include screen('md', min) {
+          @include screen('sm', min) {
             margin-top: 5px;
           }
         }
@@ -150,7 +150,7 @@
         text-align: right;
       }
 
-      @include screen('md') {
+      @include screen('sm') {
         display: none;
       }
     }
@@ -162,7 +162,7 @@
     &:not(:first-child) {
       margin-top: 3px;
 
-      @include screen('md') {
+      @include screen('sm') {
         margin-top: 2px;
       }
     }
@@ -187,7 +187,7 @@
       margin-top: 22px;
     }
 
-    @include screen('md') {
+    @include screen('sm') {
       margin-top: 2px;
     }
   }
