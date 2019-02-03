@@ -1,113 +1,132 @@
 .content-zone {
+  counter-reset: section;
+  font-size: 16px;
+  line-height: 1.67;
 
-  h1 {
+  $b: &;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
+  &:not(:first-child) {
+    margin-top: 74px;
+  }
 
-    @include heading-1;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    font-family: $font-second;
+    line-height: 1.5;
   }
 
   h2 {
+    font-size: 30px;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    &:not(:first-child) {
+      margin-top: 54px;
     }
-
-    @include heading-2;
   }
 
   h3 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-3;
-  }
-
-  h4 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-4;
-  }
-
-  h5 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-5;
-  }
-
-  h6 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-6;
+    font-size: 20px;
+    color: $color-basic;
   }
 
   p {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    &:not(:first-child) {
+      margin-top: 6px;
     }
-
-    small {
-      display: block;
-
-      @include text-small;
-    }
-
-    @include text;
   }
 
-  blockquote {
-    margin: 0;
-    padding-left: 40px;
-    border-left: 2px solid black;
-    display: block;
+  ol {
+    font-size: 18px;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
+    p {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+
+    li {
+      position: relative;
+      counter-increment: section;
+      padding-left: 30px;
+
+      &::before {
+        content: counter(section) '.';
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
     }
   }
 
-  img {
-    max-width: 100%;
+  table {
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: $color-basic;
+    text-align: center;
+    line-height: 1.2;
+    margin-left: -26px;
+    min-width: 100%;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 51px;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
+    td, th {
+      border-width: 0 1px 1px 0;
+      border-style: solid;
+      border-color: $color-basic;
+      padding: 5px;
+    }
+
+    th {
+      font-size: 18px;
+      color: $color-grey-dark;
+      font-family: $font-second;
+      font-weight: 400;
+    }
+
+    td {
+      font-size: 20px;
+      color: $color-basic;
+
+      &[colspan] {
+        font-size: 16px;
+      }
     }
   }
 
-  > ul, > ol {
+  &_about {
+    font-size: 14px;
+    line-height: 2.14;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    p {
+      &:not(:first-child) {
+        margin-top: 31px;
+      }
+    }
+
+    ol {
+      font-size: 14px;
+      line-height: 1.43;
+
+      &:not(:first-child) {
+        margin-top: 33px;
+      }
+
+      li {
+        padding-left: 20px;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
     }
   }
-
-  ul, ol { @include list; }
-
-  ul { @include ullist; }
-
-  ol { @include ollist; }
-
-  a { @include link; }
 }

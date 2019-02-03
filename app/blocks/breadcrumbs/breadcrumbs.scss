@@ -1,38 +1,46 @@
-$breadpadding: 35px;
-
 .breadcrumbs {
   display: block;
+  height: 0;
+  position: relative;
+  z-index: 2;
+
+  $b: &;
+
+  &__wrapper {
+    padding: 18px 0;
+    background-image: linear-gradient(to bottom, rgba(black, .3), rgba(black, .2) 39%, transparent);
+  }
+
+  &__list {
+    font-size: 0;
+  }
+
+  &__link {
+    color: black;
+    transition: color $ease-main;
+
+    &:hover {
+      color: rgba(black, .5);
+    }
+  }
 
   &__item {
     display: inline-block;
     position: relative;
+    font-size: 12px;
+    line-height: 1.2;
 
     &:not(:last-child) {
-      padding-right: $breadpadding;
+      margin-right: 3px;
 
       &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        right: $breadpadding/2;
-        width: 5px;
-        height: 5px;
-        border-width: 1px 1px 0 0;
-        border-style: solid;
-        border-color: $color-basic;
-        transform-origin: center;
-        transform: translateX(50%) rotate(45deg);
+        content: ' >';
+        color: black;
       }
     }
 
-    &:last-child .link {
+    &:last-child {
       pointer-events: none;
-
-      &__text {
-        @include link-disabled;
-      }
     }
   }
 }

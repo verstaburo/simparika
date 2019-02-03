@@ -4,7 +4,7 @@ block head
   - var pageTitle = 'Симпарика | Главная'
 
 block content
-  +header(1)
+  +header()
 
   +video-block('assets/video/video.mp4', 'assets/images/poster.jpg', 'Симпарика – защита от блох и клещей до 15 недель! <span>*</span>', '*При использовании упаковки на 3 таблетки.')
 
@@ -74,5 +74,3 @@ block content
             +article-card('assets/images/poster.jpg', 'Как вычислить и устранить паразитов?', 'Если клещ присосался к коже человека, то снимать его следует особенно осторожно, чтобы не оборвать хоботок, который глубоко и сильно укрепляется на весь период присасывания.')(href="instruction.html")
     +section-footer._margin_one
       +button()(href="articles.html") Смотреть все
-
-  +footer

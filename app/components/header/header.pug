@@ -1,11 +1,10 @@
-- var links = ['Инструкция', 'Пройти тест', 'Вопросы и ответы', 'Статьи'];
 - var n = 0;
 - var myIndex = -1;
 - var activeClass;
 
 mixin header(index)
   if !index
-    myIndex = -1;
+    - myIndex = -1;
 
   +b.header&attributes(attributes)
     .container.container_full.header__container
@@ -13,7 +12,7 @@ mixin header(index)
         img(src="assets/images/logo.svg")
       +e.NAV.nav
         +e.UL.menu
-          each link in links
+          each link in getData('menu')
             - activeClass = n === index ? 'is-active' : '';
             +e.LI.item
               +e.A.link(href="#" class=activeClass)!= link

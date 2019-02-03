@@ -149,6 +149,20 @@
           }
         }
       }
+
+      &_four {
+        &:not(:first-child) {
+          margin-top: 58px;
+
+          @include screen('lg') {
+            margin-top: 21px;
+          }
+
+          @include screen('sm') {
+            margin-top: 17px;
+          }
+        }
+      }
     }
   }
 
@@ -181,6 +195,21 @@
           }
         }
       }
+    }
+  }
+
+  &__subheading {
+    font-family: $font-second;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto;
+    display: block;
+    max-width: 900px;
+
+    &:not(:first-child) {
+      margin-top: -2px;
     }
   }
 }
