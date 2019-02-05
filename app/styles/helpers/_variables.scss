@@ -8,7 +8,7 @@ $container-padding: 85px; // Отступы слева и справа у кон
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
 $grid-gap: 40px; // Расстояние между колонками
-$grid-gap-vertical: 40px; // Расстояние между строками в сетке
+$grid-gap-vertical: 144px; // Расстояние между строками в сетке
 $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 $breakpoints: (
   'xl': 1920px,

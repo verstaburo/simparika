@@ -2,4 +2,5 @@ mixin faq-card(image, question, text)
   +b.faq-card&attributes(attributes)
     +e.IMG.image(src=image)
     +e.H3.title!= question
-    +e.P.text!= text
+    if text
+      +e.P.text!= text

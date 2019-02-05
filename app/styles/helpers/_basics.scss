@@ -51,13 +51,15 @@ html, body {
   padding: 0;
   overflow-x: hidden; // Убираем горизонтальный скролл
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body {
   font-family: $font-main; // Задаем основной шрифт
   font-size: 16px; // Убираем проблему с отступами между inline-элементами
   color: $color-basic;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
