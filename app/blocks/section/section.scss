@@ -23,6 +23,23 @@
     }
   }
 
+  &_padding {
+    &_one {
+      padding-top: 39px;
+      padding-bottom: 123px;
+
+      @include screen('lg') {
+        padding-top: 36px;
+        padding-bottom: 79px;
+      }
+
+      @include screen('sm') {
+        padding-top: 32px;
+        padding-bottom: 16px;
+      }
+    }
+  }
+
   &__description {
     font-size: 18px;
     line-height: 1.67;
@@ -159,7 +176,7 @@
           }
 
           @include screen('sm') {
-            margin-top: 17px;
+            margin-top: 16px;
           }
         }
       }
@@ -208,8 +225,26 @@
     display: block;
     max-width: 900px;
 
+    @include screen('lg') {
+      font-size: 15px;
+      max-width: 450px;
+    }
+
+    @include screen('sm') {
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
     &:not(:first-child) {
       margin-top: -2px;
+
+      @include screen('lg') {
+        margin-top: 22px;
+      }
+
+      @include screen('sm') {
+        margin-top: 16px;
+      }
     }
   }
 }

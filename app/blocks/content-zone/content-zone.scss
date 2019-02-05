@@ -3,47 +3,125 @@
   font-size: 16px;
   line-height: 1.67;
 
+  @include screen('lg') {
+    font-size: 14px;
+    line-height: 1.88;
+  }
+
+  @include screen('sm') {
+    font-size: 12px;
+    line-height: 1.67;
+  }
+
   $b: &;
 
   &:not(:first-child) {
     margin-top: 74px;
+
+    @include screen('lg') {
+      margin-top: 42px;
+    }
+
+    @include screen('sm') {
+      margin-top: 32px;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-family: $font-second;
     line-height: 1.5;
+
+    @include screen('lg') {
+      line-height: 1.67;
+    }
+
+    @include screen('sm') {
+      line-height: 1.6;
+    }
   }
 
   h2 {
     font-size: 30px;
 
+    @include screen('lg') {
+      font-size: 20px;
+    }
+
+    @include screen('sm') {
+      font-size: 14px;
+    }
+
     &:not(:first-child) {
       margin-top: 54px;
+
+      @include screen('lg') {
+        margin-top: 27px;
+      }
+
+      @include screen('sm') {
+        margin-top: 24px;
+      }
     }
   }
 
   h3 {
     font-size: 20px;
     color: $color-basic;
+
+    @include screen('lg') {
+      font-size: 18px;
+    }
+
+    @include screen('sm') {
+      font-size: 14px;
+    }
   }
 
   p {
     &:not(:first-child) {
       margin-top: 6px;
+
+      @include screen('lg') {
+        margin-top: 0px;
+      }
+
+      @include screen('sm') {
+        margin-top: 16px;
+      }
     }
   }
 
   ol {
     font-size: 18px;
 
+    @include screen('lg') {
+      font-size: 16px;
+    }
+
+    @include screen('sm') {
+      font-size: 12px;
+    }
+
     &:not(:first-child) {
       margin-top: 25px;
+
+      @include screen('lg') {
+        margin-top: 19px;
+      }
+
+      @include screen('sm') {
+        margin-top: 17px;
+      }
     }
 
     p {
       &:not(:first-child) {
         margin-top: 30px;
+
+        @include screen('sm') {
+          margin-top: 16px;
+        }
       }
     }
 
@@ -51,6 +129,10 @@
       position: relative;
       counter-increment: section;
       padding-left: 30px;
+
+      @include screen('sm') {
+        padding-left: 20px;
+      }
 
       &::before {
         content: counter(section) '.';
@@ -61,6 +143,10 @@
 
       &:not(:first-child) {
         margin-top: 30px;
+
+        @include screen('sm') {
+          margin-top: 20px;
+        }
       }
     }
   }
@@ -74,8 +160,12 @@
     margin-left: -26px;
     min-width: 100%;
 
-    &:not(:first-child) {
-      margin-top: 51px;
+    @include screen('lg') {
+      margin-left: -31px;
+    }
+
+    @include screen('sm') {
+      margin-left: 0;
     }
 
     td, th {
@@ -90,14 +180,38 @@
       color: $color-grey-dark;
       font-family: $font-second;
       font-weight: 400;
+
+      @include screen('lg') {
+        font-size: 15px;
+      }
+
+      @include screen('sm') {
+        font-size: 12px;
+      }
     }
 
     td {
       font-size: 20px;
       color: $color-basic;
 
+      @include screen('lg') {
+        font-size: 16px;
+      }
+
+      @include screen('sm') {
+        font-size: 12px;
+      }
+
       &[colspan] {
         font-size: 16px;
+
+        @include screen('lg') {
+          font-size: 14px;
+        }
+
+        @include screen('sm') {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -106,9 +220,30 @@
     font-size: 14px;
     line-height: 2.14;
 
+    @include screen('sm') {
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
+    h3 {
+      & + p {
+        @include screen('lg') {
+          margin-top: 12px !important;
+        }
+
+        @include screen('sm') {
+          margin-top: 16px !important;
+        }
+      }
+    }
+
     p {
       &:not(:first-child) {
         margin-top: 31px;
+
+        @include screen('sm') {
+          margin-top: 20px;
+        }
       }
     }
 
@@ -116,8 +251,21 @@
       font-size: 14px;
       line-height: 1.43;
 
+      @include screen('lg') {
+        font-size: 12px;
+        line-height: 1.67;
+      }
+
       &:not(:first-child) {
         margin-top: 33px;
+
+        @include screen('lg') {
+          margin-top: 20px;
+        }
+
+        @include screen('sm') {
+          margin-top: 17px;
+        }
       }
 
       li {
@@ -126,6 +274,32 @@
         &:not(:first-child) {
           margin-top: 20px;
         }
+      }
+    }
+  }
+
+  .table-wrap {
+    &:not(:first-child) {
+      margin-top: 51px;
+
+      @include screen('lg') {
+        margin-top: 20px;
+      }
+
+      @include screen('sm') {
+        margin-top: 24px;
+      }
+    }
+
+    @include screen('sm') {
+      overflow: auto;
+      margin-right: -15px;
+      margin-left: -35px;
+
+      table {
+        min-width: 600px;
+        margin-left: 35px;
+        margin-right: 15px;
       }
     }
   }
