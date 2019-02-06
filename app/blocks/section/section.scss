@@ -109,6 +109,29 @@
     @include screen('sm') {
       font-size: 16px;
     }
+
+    #{$b}__header_line_one & {
+      @include screen('lg', min) {
+        line-height: 1.2;
+      }
+
+      @include screen('sm') {
+        text-align: left;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &_width {
+      &_one {
+        max-width: 760px;
+      }
+    }
   }
 
   &__content {

@@ -26,35 +26,57 @@
 
 .checkradio {
   position: relative;
-  padding-left: 25px;
+  padding-left: 52px;
   display: inline-block;
   cursor: pointer;
 
+  @include screen('lg') {
+    padding-left: 26px;
+  }
+
+  @include screen('sm') {
+    padding-left: 20px;
+  }
+
   &__input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 
     &:checked {
 
       & + .checkradio__box {
-        &::before { opacity: 1; }
+        &::before {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
     }
   }
 
   &__box {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 1px solid $color-border;
+    width: 17px;
+    height: 17px;
+    border: 3px solid $color-main;
     left: 0;
-    top: 2px;
+    top: 5px;
+    border-radius: 100px;
+
+    @include screen('lg') {
+      border-width: 2px;
+      width: 12px;
+      height: 12px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    @include screen('sm') {
+      width: 8px;
+      height: 8px;
+      bottom: auto;
+      top: 5px;
+    }
 
     &::before {
       content: '';
@@ -63,14 +85,37 @@
       background-color: $color-main;
       display: block;
       opacity: 0;
-      transition: opacity $ease-main;
+      transform: scale(0);
+      transition: opacity $ease-main, transform $ease-main;
+      border-radius: 100px;
+
+      @include screen('lg') {
+        width: 6px;
+        height: 6px;
+      }
+
+      @include screen('sm') {
+        width: 4px;
+        height: 4px;
+      }
 
       @include center-image;
     }
   }
 
   &__content {
-    @include text;
+    font-size: 18px;
+    line-height: 1.67;
+
+    @include screen('lg') {
+      font-size: 14px;
+      line-height: 1.43;
+    }
+
+    @include screen('sm') {
+      font-size: 12px;
+      line-height: 1.6;
+    }
   }
 }
 

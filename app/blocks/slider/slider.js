@@ -81,5 +81,37 @@ export default function slider() {
       },
     });
   });
+
+  // Слайдер преимуществ
+  $('.js-test-slider').each(function () {
+    const el = $(this);
+
+    const slider = new Swiper($(this), {
+      speed: 700,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      simulateTouch: false,
+      autoHeight: true,
+      roundLengths: true,
+      init: false,
+      allowTouchMove: false,
+    });
+
+    slider.on('init slideChangeTransitionStart', function () {
+      const current = slider.activeIndex + 1;
+      const total = slider.slides.length;
+      const progress = slider.progress;
+      const parent = el.parents('.test');
+
+      parent.find('.test__counter').text(`${current}/${total}`);
+      parent.find('.test__progressbar span').css({width: `${progress * 100}%`});
+    });
+
+    slider.init();
+
+    $('.js-test-next').on('click', function () {
+      slider.slideNext();
+    });
+  });
 }
 /* eslint-enable */

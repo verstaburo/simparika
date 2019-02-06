@@ -1,0 +1,26 @@
+mixin test-item(heading, options, n)
+  +b.test-item&attributes(attributes)
+    +e.H2.heading!= heading
+    +e.options
+      each option in options
+        +radio('testAnswer[' + n + ']', option, false).__radio!= option
+    +e.footer
+      +button(type="button" disabled).__button.js-test-next Дальше
+
+mixin test(json)
+  +b.test&attributes(attributes)
+    +e.info
+      +e.counter
+      +e.progressbar
+        span
+    +e.FORM.form(action="#" method="post")
+      +e.bg
+        span
+        span
+      +slider.__slider.js-test-slider
+        .swiper-wrapper
+          - var n = 0;
+          each item in json
+            .swiper-slide
+              +test-item(item.heading, item.items, n)
+              - n++;
