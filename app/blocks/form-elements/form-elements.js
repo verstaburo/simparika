@@ -1,6 +1,3 @@
-// https://github.com/jshjohnson/Choices
-import Choices from 'choices.js';
-
 // https://github.com/leongersen/noUiSlider
 import noUiSlider from 'nouislider';
 
@@ -11,17 +8,6 @@ import 'air-datepicker';
 import Inputmask from 'inputmask';
 
 const $ = window.$;
-
-export function selects() {
-  /* eslint-disable no-unused-vars */
-  if ($('.js-select').length) {
-    const choices = new Choices('.js-select', {
-      searchEnabled: false,
-      itemSelectText: '',
-    });
-  }
-  /* eslint-enable no-unused-vars */
-}
 
 export function sliders() {
   // Параметры берутся из дата-атрибутов

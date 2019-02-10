@@ -11,6 +11,12 @@
     display: none;
   }
 
+  &_blue {
+    border-top: 1px solid white;
+    padding: 15px 0;
+    background: linear-gradient(to bottom, rgba(white, .2), rgba(white, 0.12) 39%, rgba(white, 0.05)), $color-main;
+  }
+
   &__list {
     font-size: 0;
   }
@@ -19,8 +25,16 @@
     color: black;
     transition: color $ease-main;
 
+    #{$b}_blue & {
+      color: white;
+    }
+
     &:hover {
       color: rgba(black, .5);
+
+      #{$b}_blue & {
+        color: rgba(white, .5);
+      }
     }
   }
 
@@ -30,12 +44,20 @@
     font-size: 12px;
     line-height: 1.2;
 
+    #{$b}_blue & {
+      font-size: 18px;
+    }
+
     &:not(:last-child) {
       margin-right: 3px;
 
       &::after {
         content: ' >';
         color: black;
+
+        #{$b}_blue & {
+          color: white;
+        }
       }
     }
 

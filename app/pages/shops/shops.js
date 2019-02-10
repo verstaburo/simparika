@@ -1,0 +1,188 @@
+/* eslint-disable */
+// https://github.com/jshjohnson/Choices
+import Choices from 'choices.js/public/assets/scripts/choices';
+
+const $ = window.$;
+const ymaps = window.ymaps;
+
+export default function shops() {
+  // Получение параметров из URL
+  const getUrlParameter = function getUrlParameter(sParam) {
+    let sPageURL = window.location.search.substring(1),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+      }
+    }
+  };
+
+  // Селект
+  window.select = new Choices('.js-city-select', {
+    searchEnabled: true,
+    searchChoices: true,
+    itemSelectText: '',
+    shouldSort: false,
+    classNames: {
+      containerOuter: 'choices city-select',
+    },
+    noResultsText: 'Город не найден',
+  });
+
+  // Показ адресов
+  $(document).on('click', '.js-shop-button', function () {
+    $(this).toggleClass('is-active');
+    $(this).parents('.shops__item').find('.shops__adresses').slideToggle(500);
+  });
+
+  // Переключение видов
+  $(document).on('change', '.js-map-switch input', function () {
+    console.log($(this).parents('.search').find('.tabs__tab:not(.is-active)'));
+    $(this).parents('.search').find('.tabs__tab:not(.is-active)')[0].click();
+  });
+
+  let currentCity = "Москва";
+
+  // Карта
+  let myMap;
+  ymaps.ready(init);
+
+  function init() {
+    myMap = new ymaps.Map("map", {
+      center: [40.510034, 49.294752],
+      zoom: 7
+    });
+
+    // Отключаем зум колесиком
+    myMap.behaviors.disable('scrollZoom');
+
+    // Получение города
+    ymaps.geolocation.get({autoGeocode: true}).then(function (result) {
+      if (getUrlParameter('city')) {
+        currentCity = getUrlParameter('city');
+      } else {
+        currentCity = result.geoObjects.get(0).properties.getAll()["name"] || "Москва";
+      }
+
+      select.setChoiceByValue(currentCity);
+      $(document).find('.js-city-name').text(currentCity);
+      history.replaceState(currentCity, document.title, window.location.pathname + "?city=" + currentCity);
+
+      // Загружаем объекты
+      shopPageWork();
+    });
+  }
+
+  // Обновляем объекты
+  $(document).on('change', '[name="searchRadio"], .js-city-select', function () {
+    currentCity = $(document).find('.js-city-select').val();
+    history.replaceState(currentCity, document.title, window.location.pathname + "?city=" + currentCity);
+    $(document).find('.js-city-name').text(currentCity);
+    shopPageWork();
+  });
+
+  function placemarkWithContent(coords, name, address, website, image, logo) {
+    return new ymaps.Placemark(coords, {
+      balloonContentHeader: `<img src="${logo}" style="max-width: 100px; max-height: 60px; margin-bottom: 10px;"><div style="font-family: 'Montserrat', Arial, sans-serif">${name}</div>`,
+      balloonContentBody: `<div style="font-family: 'Open Sans', Arial, sans-serif">${address}</div>`,
+      balloonContentFooter: `<a href="${website}" style="color: #005260; font-family: 'Open Sans', Arial, sans-serif">${website}</a>`,
+      hintContent: name,
+    }, {
+      iconLayout: 'default#imageWithContent',
+      iconImageHref: image,
+      iconImageSize: [46, 60],
+      iconImageOffset: [-23, -60],
+      iconContentOffset: [15, 15],
+    });
+  }
+
+  function shopPageWork() {
+    // Фильтр типов объектов
+    let currentFilter = [];
+    $(document).find('[name="searchRadio"]:checked').each(function (i) {
+      currentFilter[i] = $(this).val();
+    });
+
+    // Получаем список магазинов и выводим на карту
+    $.getJSON('assets/json/shops.json', function (json) {
+      let objects = json;
+      let objectsCount = 0;
+      const shops = $(document).find('.shops__items');
+
+      // Убираем ранее загруженные магазины
+      shops.html('');
+      myMap.geoObjects.removeAll();
+
+      // Выводим объекты в список и на карту
+      $.each(objects, function (i) {
+        if ($.inArray(`${objects[i]["type"]}`, currentFilter) < 0 && currentFilter.length > 0) return;
+        if (objects[i]["shops"][currentCity] === undefined) return;
+
+        objectsCount += 1;
+
+        let shopHTML = `<div class="shops__item">`;
+        shopHTML += `<div class="shops__row shops__row_shop">`;
+        shopHTML += `<div class="shops__col shops__col_logo">`;
+        shopHTML += `<img class="shops__logo" src="${objects[i]["logo"]}" alt="" role="presentation">`;
+        shopHTML += `</div>`;
+        shopHTML += `<div class="shops__col shops__col_name">`;
+        shopHTML += `<h2 class="shops__name">${objects[i]["name"]}</h2>`;
+        shopHTML += `<a class="shops__link shops__link_mobile" href="${objects[i]["website"]}">${objects[i]["website"]}</a>`;
+        shopHTML += `</div>`;
+        shopHTML += `<div class="shops__col shops__col_site">`;
+        shopHTML += `<a class="shops__link" href="${objects[i]["website"]}">${objects[i]["website"]}</a>`;
+        shopHTML += `</div>`;
+        shopHTML += `<div class="shops__col shops__col_phone"><img class="shops__phone-icon" src="assets/images/phone.svg" alt="" role="presentation">`;
+        shopHTML += `<div class="shops__phones">`;
+
+        $.each(objects[i]["phone"], function (l) {
+          shopHTML += `<a class="shops__phone" href="tel:${objects[i]["phone"][l]}">${objects[i]["phone"][l]}</a>`;
+        });
+
+        shopHTML += `</div>`;
+        shopHTML += `</div>`;
+        shopHTML += `<div class="shops__col shops__col_button">`;
+        shopHTML += `<button class="shops__button js-shop-button"></button>`;
+        shopHTML += `</div>`;
+        shopHTML += `</div>`;
+        shopHTML += `<ul class="shops__adresses">`;
+
+        // Город
+        $.each(objects[i]["shops"][currentCity], function (n) {
+          const address = objects[i]["shops"][currentCity][n]["address"];
+          const coords = objects[i]["shops"][currentCity][n]["coordinates"];
+          const image = objects[i]["mapImage"] || "assets/images/pin_1.svg";
+          const name = objects[i]["name"];
+          const logo = objects[i]["logo"];
+          const website = objects[i]["website"];
+
+          shopHTML += `<li class="shops__adress">${objects[i]["shops"][currentCity][n]["address"]}</li>`;
+          myMap.geoObjects.add(placemarkWithContent(coords, name, address, website, image, logo));
+        });
+
+        shopHTML += `</ul>`;
+        shopHTML += `</div>`;
+
+        shops.append(shopHTML);
+      });
+
+      // Показываем добавленные объекты и выставляем зум
+      if (objectsCount < 1) {
+        $('.shops').addClass('is-empty');
+      } else {
+        $('.shops').removeClass('is-empty');
+      }
+
+      if (objectsCount < 1) return;
+
+      myMap.setBounds(myMap.geoObjects.getBounds());
+      myMap.setZoom(12, {duration: 0});
+    });
+  }
+};
+/* eslint-enable */

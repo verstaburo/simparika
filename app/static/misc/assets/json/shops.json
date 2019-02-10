@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Бетховен",
+    "logo": "assets/images/shop_logo_1.png",
+    "website": "www.bethowen.ru",
+    "phone": ["+7 800 555-22-11"],
+    "mapImage": "assets/images/pin_4.png",
+    "type": 1,
+    "shops": {
+      "Москва": [
+        {
+          "coordinates": [55.709009, 37.515475],
+          "address": "Венёвская ул., 4"
+        },
+        {
+          "coordinates": [55.779818, 37.684940],
+          "address": "Варшавское шоссе, 160"
+        },
+        {
+          "coordinates": [55.701414, 37.693607],
+          "address": "Проспект Мира, 97"
+        }
+      ],
+      "Адлер": [
+        {
+          "coordinates": [43.451534, 39.907780],
+          "address": "Новочерёмушкинская ул., 18"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Четыре лапы",
+    "logo": "assets/images/shop_logo_2.svg",
+    "website": "4lapy.ru",
+    "phone": ["+7 800 770-00-22", "+7 495 221-72-26"],
+    "mapImage": "assets/images/pin_2.svg",
+    "type": 2,
+    "shops": {
+      "Москва": [
+        {
+          "coordinates": [55.760274, 37.554628],
+          "address": "Венёвская ул., 4"
+        },
+        {
+          "coordinates": [55.703946, 37.658639],
+          "address": "Варшавское шоссе, 160"
+        }
+      ],
+      "Адлер": [
+        {
+          "coordinates": [43.434993, 39.917212],
+          "address": "Новочерёмушкинская ул., 18"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Сами с усами",
+    "logo": "assets/images/shop_logo_3.svg",
+    "website": "samizoo.ru",
+    "phone": ["+7 495 154 51 27"],
+    "mapImage": "assets/images/pin_3.svg",
+    "type": 2,
+    "shops": {
+      "Москва": [
+        {
+          "coordinates": [55.779394, 37.680052],
+          "address": "Красносельский район"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Марквет",
+    "logo": "assets/images/shop_logo_4.svg",
+    "website": "www.markvet.ru",
+    "phone": ["+7 (495) 252-11-03"],
+    "type": 2,
+    "shops": {
+      "Москва": [
+        {
+          "coordinates": [55.696769, 37.609816],
+          "address": "Донской район"
+        }
+      ]
+    }
+  }
+]

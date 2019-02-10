@@ -1,6 +1,7 @@
 - var n = 0;
 - var myIndex = -1;
 - var activeClass;
+- var buttonActiveClass;
 
 mixin header(index)
   if !index
@@ -18,5 +19,6 @@ mixin header(index)
               +e.A.link(href="#" class=activeClass)!= link
             - n++;
 
-        +button()(href="shops.html").__button Где купить?
+        - buttonActiveClass = index === 'button' ? '_blue' : '';
+        +button()(href="shops.html" class=buttonActiveClass).__button Где купить?
       +burger-button.__burger

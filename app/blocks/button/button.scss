@@ -36,5 +36,9 @@
   }
 
   &:hover, &.is-active { opacity: .5; }
+
+  &_blue {
+    background-color: $color-blue;
+  }
 }
 

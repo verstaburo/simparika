@@ -5,13 +5,12 @@ import anchor from '../blocks/js-functions/anchor';
 import windowResize from '../blocks/js-functions/window';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
-import { selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form-elements/form-elements';
+import { sliders, datepicker, inputmask, numberinput } from '../blocks/form-elements/form-elements';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
 import slider from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
-import maps from '../blocks/map/map';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
@@ -20,6 +19,7 @@ import header from '../components/header/header';
 import products from '../components/products/products';
 import videoBlock from '../components/video-block/video-block';
 import mytest from '../blocks/test/test';
+import shops from '../pages/shops/shops';
 
 const $ = window.$;
 
@@ -28,7 +28,6 @@ $(() => {
   objectFitImages();
   anchor();
   freezebuttons();
-  selects();
   sliders();
   popups();
   scrollbar();
@@ -38,7 +37,6 @@ $(() => {
   datepicker();
   inputmask();
   numberinput();
-  maps();
   scrollanimation();
 
   header();
@@ -46,4 +44,5 @@ $(() => {
   windowResize();
   products();
   mytest();
+  shops();
 });

@@ -17,6 +17,19 @@
     background-color: rgba(76, 76, 76, 0.04);
   }
 
+  &_shops {
+    padding: 52px 0 24px;
+
+    @include screen('lg') {
+      padding-top: 17px;
+    }
+
+    @include screen('sm') {
+      padding-top: 9px;
+      padding-bottom: 8px;
+    }
+  }
+
   &_products {
     @include screen('lg') {
       padding-bottom: 0;
