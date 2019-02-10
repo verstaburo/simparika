@@ -33,6 +33,7 @@
   &[disabled], &.is-disabled {
     opacity: .5;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &:hover, &.is-active { opacity: .5; }

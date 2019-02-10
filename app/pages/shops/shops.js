@@ -1,11 +1,10 @@
 /* eslint-disable */
-// https://github.com/jshjohnson/Choices
-import Choices from 'choices.js/public/assets/scripts/choices';
-
 const $ = window.$;
 const ymaps = window.ymaps;
 
 export default function shops() {
+  if ($('.shops').length < 1) return;
+
   // Получение параметров из URL
   const getUrlParameter = function getUrlParameter(sParam) {
     let sPageURL = window.location.search.substring(1),
@@ -42,7 +41,6 @@ export default function shops() {
 
   // Переключение видов
   $(document).on('change', '.js-map-switch input', function () {
-    console.log($(this).parents('.search').find('.tabs__tab:not(.is-active)'));
     $(this).parents('.search').find('.tabs__tab:not(.is-active)')[0].click();
   });
 
