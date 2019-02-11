@@ -10,7 +10,6 @@ import header from '../components/header/header';
 import products from '../components/products/products';
 import videoBlock from '../components/video-block/video-block';
 import mytest from '../blocks/test/test';
-import shops from '../pages/shops/shops';
 
 const $ = window.$;
 
@@ -26,5 +25,4 @@ $(() => {
   windowResize();
   products();
   mytest();
-  shops();
 });
