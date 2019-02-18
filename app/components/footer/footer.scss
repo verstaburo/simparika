@@ -15,12 +15,27 @@
     padding: 14px 0 9px;
     width: 100%;
 
+    &.is-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: translate3d(0, 0, 0);
+      z-index: 20;
+    }
+
     @include screen('lg') {
       order: 1000;
     }
 
     @include screen('sm') {
       padding: 7px 0;
+    }
+  }
+
+  &-spirit {
+    @include screen('lg') {
+      order: 1000;
     }
   }
 

@@ -7,6 +7,14 @@
   position: relative;
   z-index: 100;
 
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+
   $b: &;
 
   @include screen('lg') {
