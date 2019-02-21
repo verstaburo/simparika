@@ -70,6 +70,10 @@
     line-height: 1;
     text-align: center;
 
+    @include screen('xl') {
+      font-size: 21px;
+    }
+
     @include screen('lg') {
       font-size: 15px;
       letter-spacing: .035em;

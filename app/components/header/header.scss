@@ -48,6 +48,10 @@
     img {
       width: 298px;
 
+      @include screen('xl') {
+        width: 180px;
+      }
+
       @include screen('lg') {
         width: 192px;
       }
@@ -139,6 +143,10 @@
 
     &:hover {
       opacity: .5;
+    }
+
+    @include screen('xl') {
+      padding: 0 29px;
     }
 
     @include screen('lg') {

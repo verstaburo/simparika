@@ -1,8 +1,9 @@
 /* eslint-disable */
 const $ = window.$;
+const globalOptions = window.globalOptions;
 
 export default function windowResize() {
-  const breakpoints = [768, 1440];
+  const breakpoints = [globalOptions.sizes.sm, globalOptions.sizes.lg];
   const breakpointsName = ['mobile', 'tablet', 'desktop'];
 
   function checkbp() {
