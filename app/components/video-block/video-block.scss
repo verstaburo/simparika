@@ -24,16 +24,16 @@
 
     #{$b}_small & {
       padding-top: 132px;
-      padding-bottom: 129px;
+      padding-bottom: 318px;
 
       @include screen('lg') {
-        padding-top: 97px;
-        padding-bottom: 148px;
+        padding-top: 126px;
+        padding-bottom: 195px;
       }
 
       @include screen('sm') {
-        padding-top: 58px;
-        padding-bottom: 71px;
+        padding-top: 40px;
+        padding-bottom: 98px;
       }
     }
   }
