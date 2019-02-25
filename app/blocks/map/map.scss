@@ -3,6 +3,7 @@
   height: 856px;
   position: relative;
   z-index: 1;
+  min-height: 100%;
 
   @include screen('lg') {
     height: 541px;

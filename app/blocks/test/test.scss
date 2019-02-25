@@ -3,6 +3,11 @@
 
   $b: &;
 
+  &_result {
+    position: relative;
+    z-index: 2;
+  }
+
   &__info {
     display: flex;
     padding: 0 65px;
@@ -54,7 +59,7 @@
 
   &__progressbar {
     flex: 1;
-    background-color: $color-grey-light-3;
+    background-color: #cfdfe1;
     border-radius: 1000px;
     display: flex;
     overflow: hidden;
@@ -68,13 +73,7 @@
       border-radius: 1000px;
       display: block;
       transition: width .7s ease;
-      background: repeating-linear-gradient(
-          -45deg,
-          $color-main,
-          $color-main 3px,
-          $color-green-light 3px,
-          $color-green-light 6px
-      ), $color-main;
+      background: $color-main;
     }
   }
 
@@ -166,12 +165,57 @@
         }
       }
     }
+
+    #{$b}_result & {
+      &::before {
+        top: auto;
+        bottom: 84px;
+        right: 22px;
+        width: 195px;
+        height: 135px;
+      }
+
+      &::after {
+        bottom: auto;
+        top: 0;
+        left: -2px;
+        width: 295px;
+        height: 226px;
+      }
+
+      span {
+        &:first-child {
+          background-image: url(../images/spot_8.svg);
+          top: 45px;
+          left: 62px;
+          bottom: 0px;
+          right: 3px;
+        }
+
+        &:last-child {
+          background-image: url(../images/spot_9.svg);
+          left: 60px;
+          top: 23px;
+          right: 1px;
+          bottom: 18px;
+        }
+      }
+    }
   }
 
   &__form {
     display: block;
     position: relative;
     padding: 95px 300px 111px 180px;
+    box-sizing: border-box;
+
+    #{$b}_result & {
+      @include screen('sm', min) {
+        max-width: 948px;
+        margin: 0 auto;
+        padding: 144px 180px 153px;
+      }
+    }
 
     @include screen('lg') {
       padding: 50px 90px 42px 105px;
@@ -208,6 +252,15 @@
     padding: 0 15px;
   }
 
+  &_result {
+    position: relative;
+    z-index: 2;
+
+    @include screen('sm') {
+      padding-left: 36px;
+    }
+  }
+
   &__heading {
     font-family: $font-second;
     font-size: 31px;
@@ -222,10 +275,60 @@
       font-size: 14px;
       line-height: 1.43;
       padding-left: 20px;
+
+      #{$b}_result & {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.67;
+    color: $color-grey;
+    margin-top: 15px;
+
+    @include screen('lg') {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include screen('sm') {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 7px;
+    }
+
+    p {
+      &:not(:first-child) {
+        margin-top: 32px;
+
+        @include screen('lg') {
+          margin-top: 16px;
+        }
+
+        @include screen('sm') {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    a {
+      color: $color-blue-bright-2;
+      border-bottom: 1px solid;
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
+      }
     }
   }
 
   &__options {
+    &.is-disabled {
+      pointer-events: none;
+    }
+
     &:not(:first-child) {
       margin-top: 29px;
 
@@ -265,6 +368,20 @@
 
       @include screen('sm') {
         margin-top: 16px;
+      }
+    }
+
+    #{$b}_result & {
+      &:not(:first-child) {
+        margin-top: 55px;
+
+        @include screen('lg') {
+          margin-top: 18px;
+        }
+
+        @include screen('sm') {
+          margin-top: 16px;
+        }
       }
     }
   }

@@ -254,7 +254,7 @@
   &__subheading {
     font-family: $font-second;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     line-height: 1.2;
     margin: 0 auto;
@@ -262,20 +262,21 @@
     max-width: 900px;
 
     @include screen('lg') {
-      font-size: 15px;
-      max-width: 450px;
+      font-size: 20px;
+      max-width: 550px;
     }
 
     @include screen('sm') {
       font-size: 12px;
       line-height: 1.67;
+      font-weight: 500;
     }
 
     &:not(:first-child) {
-      margin-top: -2px;
+      margin-top: 10px;
 
       @include screen('lg') {
-        margin-top: 22px;
+        margin-top: 10px;
       }
 
       @include screen('sm') {

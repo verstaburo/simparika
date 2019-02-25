@@ -3,6 +3,7 @@ const $ = window.$;
 
 export default function videoBlock () {
   const
+    sectionClass = '.video-block',
     buttonClass = '.js-video-button',
     videoClass = '.js-video',
     elemClass = '.js-video-hide';
@@ -10,7 +11,7 @@ export default function videoBlock () {
   $(buttonClass).click(function () {
     const
       button = $(this),
-      section = button.parents('.video-block'),
+      section = button.parents(sectionClass),
       video = section.find(videoClass),
       elems = section.find(elemClass);
 

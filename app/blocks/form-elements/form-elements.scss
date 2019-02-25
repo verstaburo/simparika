@@ -29,6 +29,18 @@
   padding-left: 52px;
   display: inline-block;
   cursor: pointer;
+  color: $color-grey;
+  transition: color $ease-main;
+
+  &_wrong {
+    color: $color-red;
+  }
+
+  &_right {
+    color: $color-green-3;
+  }
+
+  $b: &;
 
   @include screen('lg') {
     padding-left: 26px;
@@ -56,10 +68,19 @@
     position: absolute;
     width: 17px;
     height: 17px;
-    border: 3px solid $color-main;
+    border: 3px solid $color-grey;
     left: 0;
     top: 5px;
     border-radius: 100px;
+    transition: border-color $ease-main;
+
+    #{$b}_wrong & {
+      border-color: $color-red;
+    }
+
+    #{$b}_right & {
+      border-color: $color-green-2;
+    }
 
     @include screen('lg') {
       border-width: 2px;
@@ -80,13 +101,13 @@
 
     &::before {
       content: '';
-      width: 9px;
-      height: 9px;
-      background-color: $color-main;
+      width: 11px;
+      height: 11px;
+      background-color: $color-grey;
       display: block;
       opacity: 0;
       transform: scale(0);
-      transition: opacity $ease-main, transform $ease-main;
+      transition: opacity $ease-main, transform $ease-main, background-color $ease-main;
       border-radius: 100px;
 
       @include screen('lg') {
@@ -100,6 +121,14 @@
       }
 
       @include center-image;
+    }
+
+    #{$b}_wrong &::before {
+      background-color: $color-red;
+    }
+
+    #{$b}_right &::before {
+      background-color: $color-green-2;
     }
   }
 

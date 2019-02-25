@@ -137,10 +137,10 @@ function shopPage () {
         shopHTML += `</div>`;
         shopHTML += `<div class="shops__col shops__col_name">`;
         shopHTML += `<h2 class="shops__name">${objects[i]["name"]}</h2>`;
-        shopHTML += `<a class="shops__link shops__link_mobile" href="${objects[i]["website"]}">${objects[i]["website"]}</a>`;
+        shopHTML += `<a class="shops__link shops__link_mobile" href="${objects[i]["website"]}">${objects[i]["website"].replace(/(^\w+:|^)\/\//, '')}</a>`;
         shopHTML += `</div>`;
         shopHTML += `<div class="shops__col shops__col_site">`;
-        shopHTML += `<a class="shops__link" href="${objects[i]["website"]}">${objects[i]["website"]}</a>`;
+        shopHTML += `<a class="shops__link" href="${objects[i]["website"]}">${objects[i]["website"].replace(/(^\w+:|^)\/\//, '')}</a>`;
         shopHTML += `</div>`;
         shopHTML += `<div class="shops__col shops__col_phone"><img class="shops__phone-icon" src="assets/images/phone.svg" alt="" role="presentation">`;
         shopHTML += `<div class="shops__phones">`;

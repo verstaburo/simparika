@@ -2,6 +2,7 @@ import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
 import './globalOptions';
 import windowResize from '../blocks/js-functions/window';
+import parallax from '../blocks/js-functions/parallax';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import popups from '../blocks/popups/popups';
 import slider from '../blocks/slider/slider';
@@ -25,4 +26,5 @@ $(() => {
   windowResize();
   products();
   mytest();
+  parallax();
 });

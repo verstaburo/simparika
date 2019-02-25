@@ -2,9 +2,9 @@ window.globalOptions = {
   animationDuration: 300,
   sizes: {
     xl: 1920,
-    lg: 1280 + 17,
+    lg: 1280,
     md: 1024,
-    sm: 768 + 17,
+    sm: 768,
     xs: 480,
   },
 };

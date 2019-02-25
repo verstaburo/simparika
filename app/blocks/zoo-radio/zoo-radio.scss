@@ -51,7 +51,8 @@
       opacity: 0;
       transform: scale(0);
       transition: opacity $ease-main, transform $ease-main;
-      background: url('../images/foot.svg') no-repeat;
+      background-repeat: no-repeat;
+      background-image: url('../images/foot.svg');
       background-size: 100% 100%;
 
       @include center-image;
@@ -64,6 +65,18 @@
       @include screen('sm') {
         width: 14px;
         height: 14px;
+      }
+    }
+
+    #{$b}_plus & {
+      &::before {
+        background-image: url('../images/plus.svg');
+      }
+    }
+
+    #{$b}_man & {
+      &::before {
+        background-image: url('../images/man.svg');
       }
     }
   }

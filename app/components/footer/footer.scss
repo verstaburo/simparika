@@ -68,7 +68,8 @@
     font-size: 25px;
     letter-spacing: .04em;
     line-height: 1;
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
 
     @include screen('xl') {
       font-size: 21px;
@@ -90,6 +91,7 @@
     align-items: center;
     margin: 0 -30px;
     flex-wrap: wrap;
+    position: relative;
 
     @include screen('lg') {
       margin: 0 20px;
@@ -171,7 +173,10 @@
       }
 
       @include screen('sm') {
-        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        pointer-events: none;
       }
     }
   }
@@ -213,11 +218,18 @@
   }
 
   &__logo {
+    display: inline-block;
+    pointer-events: all;
+
     img {
       width: 127px;
 
       @include screen('lg') {
         width: 80px;
+      }
+
+      @include screen('sm') {
+        width: 40px;
       }
     }
   }

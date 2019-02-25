@@ -303,4 +303,47 @@
       }
     }
   }
+
+  &_description {
+    color: rgba($color-grey, .63);
+    font-size: 12px;
+    line-height: 1.2;
+
+    @include screen('lg') {
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba($color-grey, .73);
+    }
+
+    @include screen('sm') {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    p {
+      &:not(:first-child) {
+        margin-top: 16px;
+
+        @include screen('lg') {
+          margin-top: 8px;
+        }
+
+        @include screen('sm') {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    & + .content-zone {
+      margin-top: 58px;
+
+      @include screen('lg') {
+        margin-top: 36px;
+      }
+
+      @include screen('sm') {
+        margin-top: 24px;
+      }
+    }
+  }
 }
