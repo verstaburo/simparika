@@ -3,14 +3,18 @@
   box-sizing: border-box;
   border-radius: 15px;
   border: 8px solid $color-green;
-  padding: 78px 26px 46px;
+  padding: 78px 21px 46px;
   position: relative;
   width: 100%;
 
   $b: &;
 
+  @include screen('lg') {
+    padding-top: 72px;
+  }
+
   @include screen('sm') {
-    padding: 41px 17px 57px;
+    padding: 48px 17px 34px;
   }
 
   &_purple {
@@ -29,26 +33,31 @@
     border-color: $color-orange;
   }
 
+  &_yellow {
+    border-color: $color-yellow-3;
+  }
+
   &__image {
     font-size: 0;
     position: absolute;
-    left: -8px;
+    left: 0;
     top: -70px;
     height: 133px;
+    padding: 0 21px;
 
     @include screen('lg') {
       height: 120px;
       top: -62px;
-      left: 22px;
     }
 
     @include screen('sm') {
-      height: 80px;
-      left: 24px;
+      height: 93px;
+      padding: 0 17px;
+      top: -54px;
     }
 
     #{$b}_center & {
-      @include screen('sm', min) {
+      @include screen('lg', min) {
         left: 0;
         right: 0;
         margin: auto;
@@ -56,9 +65,9 @@
     }
 
     #{$b}_right & {
-      @include screen('sm', min) {
+      @include screen('lg', min) {
         left: unset;
-        right: -8px;
+        right: 0;
       }
     }
   }
@@ -80,17 +89,46 @@
     font-size: 14px;
     line-height: 1.7;
     color: rgba($color-grey-dark, .8);
+    max-width: 1030px;
 
     @include screen('sm') {
       font-size: 12px;
       line-height: 1.67;
     }
 
+    p {
+      &:not(:first-child) {
+        margin-top: 13px;
+      }
+    }
+
+    ul {
+      &:not(:first-child) {
+        margin-top: 13px;
+      }
+
+      li {
+        padding-left: 10px;
+        position: relative;
+
+        &::before {
+          content: '–';
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+    }
+
     &:not(:first-child) {
       margin-top: 19px;
 
       @include screen('sm') {
-        margin-top: 17px;
+        margin-top: 14px;
       }
     }
   }

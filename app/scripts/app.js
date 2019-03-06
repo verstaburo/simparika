@@ -11,6 +11,7 @@ import header from '../components/header/header';
 import products from '../components/products/products';
 import videoBlock from '../components/video-block/video-block';
 import mytest from '../blocks/test/test';
+import accordeon from '../blocks/accordeon/accordeon';
 
 const $ = window.$;
 
@@ -27,4 +28,5 @@ $(() => {
   products();
   mytest();
   parallax();
+  accordeon();
 });

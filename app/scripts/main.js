@@ -40,6 +40,21 @@ function shopPage () {
     noResultsText: 'Город не найден',
   });
 
+// Показ результатов только после ввода 2-х символов
+  select.passedElement.element.addEventListener('choice', function (event) {
+    $('.city-select .choices__list--dropdown .choices__list').removeAttr('style');
+  });
+
+  $(document).on('keyup keydown change', '.city-select .choices__list--dropdown input', function () {
+    var
+      el = $(this),
+      inputVal = el.val(),
+      valLength = inputVal.length,
+      list = el.siblings('.choices__list');
+
+    valLength >= 2 ? list.attr('style', 'display: block !important') : list.removeAttr('style');
+  });
+
 // Показ адресов
   $(document).on('click', '.js-shop-button', function () {
     $(this).toggleClass('is-active');
