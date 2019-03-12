@@ -4,6 +4,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: height $ease-main;
+  margin: -5px -1px 0;
 
   $b: &;
 
@@ -201,6 +203,18 @@
     }
   }
 
+  &__poster {
+    @include fill-img;
+
+    opacity: 1;
+    transition: opacity $ease-main;
+    bottom: unset;
+
+    &.is-active {
+      opacity: 0;
+    }
+  }
+
   .js-video-hide {
     transition: opacity $ease-main, transform $ease-main;
 
@@ -209,4 +223,20 @@
       transform: translate3d(0, -5px, 0);
     }
   }
+}
+
+// Скрываем кнопку плей на iOS
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
 }

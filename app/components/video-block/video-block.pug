@@ -11,4 +11,6 @@ mixin video-block(video, poster, header, subtext)
           +e.P.subtext.js-video-hide!= subtext
 
     +e.video
-      video(poster="assets/images/transparent.png" src=video style=`background-image: url(${poster})`).js-video.js-parallax
+      video(src=video).js-video
+      +e.IMG.poster(src=poster).js-video-poster.js-parallax
+

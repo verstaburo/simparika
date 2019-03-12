@@ -38,14 +38,14 @@ export default function parallax() {
         percent = (sT - (parentTop - wH)) / (wH + parentH);
         percent = percent > 1 ? 1 : percent;
         block.css({
-          transform: `translate3d(-50%, -${maxTransform * percent}px, 0)`,
+          transform: `translate3d(0, -${maxTransform * percent}px, 0)`,
         });
 
       } else if (sT > parentTop + wH) {
 
         // Блок проскроллен
         block.css({
-          transform: `translate3d(-50%, -${maxTransform}px, 0)`,
+          transform: `translate3d(0, -${maxTransform}px, 0)`,
         });
 
       }
