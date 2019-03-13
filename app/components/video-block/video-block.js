@@ -7,7 +7,8 @@ export default function videoBlock () {
     buttonClass = '.js-video-button',
     videoClass = '.js-video',
     elemClass = '.js-video-hide',
-    posterClass = '.js-video-poster';
+    posterClass = '.js-video-poster',
+    w = $(window);
 
   let defaultHeight;
 
@@ -26,7 +27,7 @@ export default function videoBlock () {
       poster.addClass('is-active');
       video.addClass('is-playing')[0].play();
       elems.addClass('is-hidden');
-      section.height(defaultHeight);
+      section.height(defaultHeight).addClass('is-active');
 
       setTimeout(function () {
         section.height(section.width() / 16 * 9);
@@ -37,7 +38,7 @@ export default function videoBlock () {
       button.removeClass('is-active');
       video.removeClass('is-playing')[0].pause();
       elems.removeClass('is-hidden');
-      section.height(defaultHeight);
+      section.height(defaultHeight).removeClass('is-active');
 
       setTimeout(function () {
         section.height('auto');
@@ -46,21 +47,30 @@ export default function videoBlock () {
     }
   });
 
+  $(sectionClass).each(function () {
+    const section = $(this);
+
+    w.on('resize', function () {
+      if (section.hasClass('is-active')) {
+        section.height(section.width() / 16 * 9);
+      }
+    });
+  });
+
   $(videoClass).each(function () {
     const
       video = $(this),
       section = video.parents('.video-block'),
       button = section.find(buttonClass),
       elems = section.find(elemClass),
-      poster = section.find(posterClass),
-      w = $(window);
+      poster = section.find(posterClass);
 
     video[0].onended = function () {
       button.removeClass('is-active');
       video.removeClass('is-playing');
       elems.removeClass('is-hidden');
       poster.removeClass('is-active');
-      section.height(defaultHeight);
+      section.height(defaultHeight).removeClass('is-active');
       video[0].currentTime = 0;
 
       setTimeout(function () {

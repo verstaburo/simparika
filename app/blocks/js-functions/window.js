@@ -19,6 +19,11 @@ export default function windowResize() {
 
   let breakpointLoaded = checkbp();
   let breakpointCurrent;
+  let metaTag;
+
+  if (breakpointLoaded === 'mobile') {
+    $(document).find('[name="viewport"]').attr('content', 'width=320');
+  }
 
   $(window).resize(function () {
     breakpointCurrent = checkbp();
