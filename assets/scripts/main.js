@@ -108,9 +108,9 @@ function shopPage () {
 
   function placemarkWithContent(coords, name, address, website, image, logo) {
     return new ymaps.Placemark(coords, {
-      balloonContentHeader: `<img src="${logo}" style="max-width: 100px; max-height: 60px; margin-bottom: 10px;"><div style="font-family: 'Montserrat', Arial, sans-serif">${name}</div>`,
-      balloonContentBody: `<div style="font-family: 'Open Sans', Arial, sans-serif">${address}</div>`,
-      balloonContentFooter: `<a href="${website}" style="color: #005260; font-family: 'Open Sans', Arial, sans-serif">${website}</a>`,
+      balloonContentHeader: '<img src="' + logo + '" style="max-width: 100px; max-height: 60px; margin-bottom: 10px;"><div style="font-family: Montserrat, Arial, sans-serif">' + name + '</div>',
+      balloonContentBody: '<div style="font-family: Open Sans, Arial, sans-serif">' + address + '</div>',
+      balloonContentFooter: '<a href="' + website + '" style="color: #005260; font-family: Open Sans, Arial, sans-serif">' + website + '</a>',
       hintContent: name,
     }, {
       iconLayout: 'default#imageWithContent',
