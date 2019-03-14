@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
     <title>Симпарика | Вопросы и ответы</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="favicon.ico" rel="shortcut icon">
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from-polyfill"></script>
 </head>
 
 <body>
@@ -41,27 +42,27 @@
                 <h2 class="section__title">Вопросы и ответы</h2>
             </div>
             <div class="section__content section__content_margin_two">
-                <div class="grid grid_dogs">
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
+                <div class="grid">
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12 grid__col_grow">
                         <div class="faq-card"><img class="faq-card__image" src="assets/images/dog_1.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Всем ли породам собак можно применять Симпарику?</h3>
                             <div class="faq-card__text">Симпарика была исследована на более чем 100 различных породах собак. Все породы собак, принимавшие участие в исследованиях, хорошо переносили Симпарику при использовании препарата в рекомендованных дозах 1,8. Симпарика так же хорошо переносится такими чувствительными к противопаразитарным препаратам породами, как колли, шелти, бордерколли и другими.</div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_blue"><img class="faq-card__image" src="assets/images/dog_2.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_blue faq-card_center faq-card_right_tablet faq-card_left_mobile"><img class="faq-card__image" src="assets/images/dog_2.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Помогает ли Симпарика при чесотке собак, ушном клеще, демодекозе?</h3>
                             <div class="faq-card__text">Да, Симпарика вызывает гибель чесоточных клещей (саркоптоз), ушного клеща (отодектоз) и возбудителя демодекоза. Если у вас есть подозрения на подобные заболевания, вам необходима консультация ветеринарного врача и подтверждение диагноза.</div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_purple"><img class="faq-card__image" src="assets/images/dog_3.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_purple faq-card_right faq-card_center_tablet faq-card_left_mobile"><img class="faq-card__image" src="assets/images/dog_3.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Есть ли ограничения при применении Симпарики?</h3>
                             <div class="faq-card__text">Препарат Симпарика можно применять щенкам с 8-недельного возраста, всем породам собак весом от 1,3 кг. Если у вашей собаки есть хронические заболевания почек и печени – проконсультируйтесь с ветеринарным врачом. Собакам, больным инфекционными заболеваниями или выздоравливающим от них, Симпарику не дают.</div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_yellow"><img class="faq-card__image" src="assets/images/dog_6.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_12 grid__col_lg_6 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_yellow faq-card_left_tablet"><img class="faq-card__image" src="assets/images/dog_6.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Мою собаку тошнит от противопаразитарных таблеток, будет ли ее тошнить от Симпарики?</h3>
                             <div class="faq-card__text">
                                 <p>Реакция вашей собаки может быть вызвана 2-ми причинами:</p>
@@ -72,20 +73,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_purple"><img class="faq-card__image" src="assets/images/dog_7.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_purple faq-card_left faq-card_right_tablet faq-card_left_mobile"><img class="faq-card__image" src="assets/images/dog_7.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Когда начинает действовать Симпарика? Через сколько времени можно будет гулять с собакой после дачи таблетки?</h3>
                             <div class="faq-card__text">Действие Симпарики на паразитов начинается уже через 3 часа после того, как собака проглотила таблетку. Но максимальное действие достигается на блох через 8 часов, на клещей – через 12 часов после дачи таблетки. Удобно дать таблетку вечером – утром уже можно смело гулять с собакой, не опасаясь блох и клещей.</div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_orange"><img class="faq-card__image" src="assets/images/dog_5.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_orange faq-card_center faq-card_center_tablet faq-card_left_mobile"><img class="faq-card__image" src="assets/images/dog_5.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">Могу ли я купать свою собаку. Не смоет ли шампунь защиту?</h3>
                             <div class="faq-card__text">Если вы используете для защиты своей собаки от внешних паразитов Симпарику, вы можете купать ее с шампунями и использовать любые другие косметические средства столько раз, сколько это необходимо. Симпарика не смывается водой и шампунями. Можно гулять с собакой под дождем, купаться в реке и озере, не боясь оставить ее незащищенной от внешних паразитов.</div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_0 grid__col_grow">
-                        <div class="faq-card faq-card_brown"><img class="faq-card__image" src="assets/images/dog_8.png" alt="" role="presentation" />
+                    <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12 grid__col_grow">
+                        <div class="faq-card faq-card_brown faq-card_right"><img class="faq-card__image" src="assets/images/dog_8.png" alt="" role="presentation" />
                             <h3 class="faq-card__title">При укусе клеща возможно заражение пироплазмозом – опасным для собак заболеванием. Защитит ли Симпарика от пироплазмоза мою собаку?</h3>
                             <div class="faq-card__text">Симпарика не только вызывает гибель иксодовых клещей на собаке, но и снижает риск заражения такими опасными болезнями, передаваемыми иксодовыми клещами, как: бабезиоз (пироплазмоз), болезнь Лайма (боррелиоз) и анаплазмоз.</div>
                         </div>

@@ -69,13 +69,13 @@ function shopPage () {
   var currentCity = "Москва";
 
 // Карта
-  var myMap;
+  window.myMap;
   ymaps.ready(init);
 
   function init() {
     myMap = new ymaps.Map("map", {
       center: [40.510034, 49.294752],
-      zoom: 7
+      zoom: 11
     });
 
     // Отключаем зум колесиком
@@ -140,37 +140,38 @@ function shopPage () {
 
       // Выводим объекты в список и на карту
       $.each(objects, function (i) {
-        if ($.inArray(`${objects[i]["type"]}`, currentFilter) < 0 && currentFilter.length > 0) return;
+        if ($.inArray(objects[i]["type"].toString(), currentFilter) < 0 && currentFilter.length > 0) return;
         if (objects[i]["shops"][currentCity] === undefined) return;
 
         objectsCount += 1;
 
-        var shopHTML = `<div class="shops__item">`;
-        shopHTML += `<div class="shops__row shops__row_shop">`;
-        shopHTML += `<div class="shops__col shops__col_logo">`;
-        shopHTML += `<img class="shops__logo" src="${objects[i]["logo"]}" alt="" role="presentation">`;
-        shopHTML += `</div>`;
-        shopHTML += `<div class="shops__col shops__col_name">`;
-        shopHTML += `<h2 class="shops__name">${objects[i]["name"]}</h2>`;
-        shopHTML += `<a class="shops__link shops__link_mobile" href="${objects[i]["website"]}">${objects[i]["website"].replace(/(^\w+:|^)\/\//, '')}</a>`;
-        shopHTML += `</div>`;
-        shopHTML += `<div class="shops__col shops__col_site">`;
-        shopHTML += `<a class="shops__link" href="${objects[i]["website"]}">${objects[i]["website"].replace(/(^\w+:|^)\/\//, '')}</a>`;
-        shopHTML += `</div>`;
-        shopHTML += `<div class="shops__col shops__col_phone"><img class="shops__phone-icon" src="assets/images/phone.svg" alt="" role="presentation">`;
-        shopHTML += `<div class="shops__phones">`;
+        var shopHTML = '';
+        shopHTML += '<div class="shops__item">';
+        shopHTML += '<div class="shops__row shops__row_shop">';
+        shopHTML += '<div class="shops__col shops__col_logo">';
+        shopHTML += '<img class="shops__logo" src="' + (objects[i]["logo"]) + '" alt="" role="presentation">';
+        shopHTML += '</div>';
+        shopHTML += '<div class="shops__col shops__col_name">';
+        shopHTML += '<h2 class="shops__name">' + (objects[i]["name"]) + '</h2>';
+        shopHTML += '<a class="shops__link shops__link_mobile" href="' + (objects[i]["website"]) + '">' + (objects[i]["website"].replace(/(^\w+:|^)\/\//, '')) + '</a>';
+        shopHTML += '</div>';
+        shopHTML += '<div class="shops__col shops__col_site">';
+        shopHTML += '<a class="shops__link" href="' + (objects[i]["website"]) + '">' + (objects[i]["website"].replace(/(^\w+:|^)\/\//, '')) + '</a>';
+        shopHTML += '</div>';
+        shopHTML += '<div class="shops__col shops__col_phone"><img class="shops__phone-icon" src="assets/images/phone.svg" alt="" role="presentation">';
+        shopHTML += '<div class="shops__phones">';
 
         $.each(objects[i]["phone"], function (l) {
-          shopHTML += `<a class="shops__phone" href="tel:${objects[i]["phone"][l]}">${objects[i]["phone"][l]}</a>`;
+          shopHTML += '<a class="shops__phone" href="tel:' + (objects[i]["phone"][l]) + '">' + (objects[i]["phone"][l]) + '</a>';
         });
 
-        shopHTML += `</div>`;
-        shopHTML += `</div>`;
-        shopHTML += `<div class="shops__col shops__col_button">`;
-        shopHTML += `<button class="shops__button js-shop-button"></button>`;
-        shopHTML += `</div>`;
-        shopHTML += `</div>`;
-        shopHTML += `<ul class="shops__adresses">`;
+        shopHTML += '</div>';
+        shopHTML += '</div>';
+        shopHTML += '<div class="shops__col shops__col_button">';
+        shopHTML += '<button class="shops__button js-shop-button"></button>';
+        shopHTML += '</div>';
+        shopHTML += '</div>';
+        shopHTML += '<ul class="shops__adresses">';
 
         // Город
         $.each(objects[i]["shops"][currentCity], function (n) {
@@ -181,12 +182,12 @@ function shopPage () {
           var logo = objects[i]["logo"];
           var website = objects[i]["website"];
 
-          shopHTML += `<li class="shops__adress">${objects[i]["shops"][currentCity][n]["address"]}</li>`;
+          shopHTML += '<li class="shops__adress">' + (objects[i]["shops"][currentCity][n]["address"]) + '</li>';
           myMap.geoObjects.add(placemarkWithContent(coords, name, address, website, image, logo));
         });
 
-        shopHTML += `</ul>`;
-        shopHTML += `</div>`;
+        shopHTML += '</ul>';
+        shopHTML += '</div>';
 
         shops.append(shopHTML);
       });
@@ -200,8 +201,10 @@ function shopPage () {
 
       if (objectsCount < 1) return;
 
-      myMap.setBounds(myMap.geoObjects.getBounds());
-      myMap.setZoom(12, {duration: 0});
+      myMap.setBounds(myMap.geoObjects.getBounds(), {
+        checkZoomRange:true,
+        zoomMargin:30,
+      });
     });
   }
 }
