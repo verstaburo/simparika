@@ -8,6 +8,7 @@
 
   @include screen('lg') {
     padding: 2px 18px;
+    pointer-events: none;
   }
 
   @include screen('sm') {

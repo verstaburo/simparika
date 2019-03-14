@@ -4,27 +4,42 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: height $ease-main;
   margin: -5px -1px 0;
+  padding-bottom: 56.25%;
 
   $b: &;
 
-  &__container {
-    position: relative;
+  .container {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    position: absolute;
     z-index: 2;
-    padding: 131px 0 317px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  &__container {
+    padding: 100px 0 200px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     @include screen('lg') {
-      padding-top: 125px;
-      padding-bottom: 192px;
+      padding-top: 80px;
+      padding-bottom: 140px;
     }
 
     @include screen('sm') {
-      padding-top: 42px;
-      padding-bottom: 95px;
+      padding-top: 20px;
+      padding-bottom: 40px;
     }
 
-    #{$b}_small & {
+    /*#{$b}_small & {
       padding-top: 132px;
       padding-bottom: 318px;
 
@@ -37,7 +52,7 @@
         padding-top: 40px;
         padding-bottom: 98px;
       }
-    }
+    }*/
   }
 
   &__header {
@@ -101,6 +116,7 @@
     position: relative;
     box-shadow: 0 0 0 5px white inset;
     border-radius: 50%;
+    flex-shrink: 0;
 
     @include screen('lg') {
       margin-top: 25px;

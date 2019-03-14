@@ -56,6 +56,13 @@
       top: -54px;
     }
 
+    #{$b}_left & {
+      @include screen('lg', min) {
+        left: 0;
+        right: unset;
+      }
+    }
+
     #{$b}_center & {
       @include screen('lg', min) {
         left: 0;
@@ -66,6 +73,50 @@
 
     #{$b}_right & {
       @include screen('lg', min) {
+        left: unset;
+        right: 0;
+      }
+    }
+
+    #{$b}_left_tablet & {
+      @include screen('lg') {
+        left: 0;
+        right: unset;
+      }
+    }
+
+    #{$b}_center_tablet & {
+      @include screen('lg') {
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    #{$b}_right_tablet & {
+      @include screen('lg') {
+        left: unset;
+        right: 0;
+      }
+    }
+
+    #{$b}_left_mobile & {
+      @include screen('sm') {
+        left: 0;
+        right: unset;
+      }
+    }
+
+    #{$b}_center_mobile & {
+      @include screen('sm') {
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    #{$b}_right_mobile & {
+      @include screen('sm') {
         left: unset;
         right: 0;
       }

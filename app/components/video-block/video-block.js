@@ -27,34 +27,14 @@ export default function videoBlock () {
       poster.addClass('is-active');
       video.addClass('is-playing')[0].play();
       elems.addClass('is-hidden');
-      section.height(defaultHeight).addClass('is-active');
-
-      setTimeout(function () {
-        section.height(section.width() / 16 * 9);
-      }, 1);
 
     } else {
 
       button.removeClass('is-active');
       video.removeClass('is-playing')[0].pause();
       elems.removeClass('is-hidden');
-      section.height(defaultHeight).removeClass('is-active');
-
-      setTimeout(function () {
-        section.height('auto');
-      }, 300);
 
     }
-  });
-
-  $(sectionClass).each(function () {
-    const section = $(this);
-
-    w.on('resize', function () {
-      if (section.hasClass('is-active')) {
-        section.height(section.width() / 16 * 9);
-      }
-    });
   });
 
   $(videoClass).each(function () {
@@ -70,12 +50,7 @@ export default function videoBlock () {
       video.removeClass('is-playing');
       elems.removeClass('is-hidden');
       poster.removeClass('is-active');
-      section.height(defaultHeight).removeClass('is-active');
       video[0].currentTime = 0;
-
-      setTimeout(function () {
-        section.height('auto');
-      }, 300);
     };
 
     w.on('scroll', function () {

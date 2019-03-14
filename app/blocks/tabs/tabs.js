@@ -20,6 +20,13 @@ export default function tabs() {
     tab.show(0, function () {
       $(this).addClass('is-active');
       window.dispatchEvent(new Event('resize'));
+
+      setTimeout(function () {
+        window.myMap.setBounds(myMap.geoObjects.getBounds(), {
+          checkZoomRange: true,
+          zoomMargin: 30,
+        });
+      }, 300);
     });
   });
 }
