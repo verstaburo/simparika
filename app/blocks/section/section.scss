@@ -51,6 +51,21 @@
         padding-bottom: 16px;
       }
     }
+
+    &_two {
+      padding-top: 39px;
+      padding-bottom: 123px;
+
+      @include screen('lg') {
+        padding-top: 36px;
+        padding-bottom: 79px;
+      }
+
+      @include screen('sm') {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+    }
   }
 
   &__description {

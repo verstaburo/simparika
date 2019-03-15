@@ -13,6 +13,8 @@ mixin header(index)
         img(src="assets/images/logo.svg")
       +e.NAV.nav
         +e.UL.menu
+          +e.LI.item._mobile
+            +e.A.link(href="index.html") Главная
           each link in getData('menu')
             - activeClass = n === index ? 'is-active' : '';
             +e.LI.item

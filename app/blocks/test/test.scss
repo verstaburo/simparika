@@ -89,6 +89,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    transform: translateZ(0);
 
     @include screen('sm') {
       display: none;
@@ -359,6 +360,10 @@
   }
 
   &__footer {
+    @include screen('sm') {
+      padding-left: 20px;
+    }
+
     &:not(:first-child) {
       margin-top: 49px;
 
@@ -372,6 +377,10 @@
     }
 
     #{$b}_result & {
+      @include screen('sm') {
+        padding-left: 0;
+      }
+
       &:not(:first-child) {
         margin-top: 55px;
 

@@ -118,6 +118,12 @@
     @include screen('sm') {
       margin-bottom: 18px;
     }
+
+    &_mobile {
+      @include screen('sm', min) {
+        display: none;
+      }
+    }
   }
 
   &__link {

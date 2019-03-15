@@ -32,6 +32,10 @@
   color: $color-grey;
   transition: color $ease-main;
 
+  &:hover {
+    font-weight: 700;
+  }
+
   &_wrong {
     color: $color-red;
   }

@@ -9,7 +9,7 @@ mixin products()
       +e.navigation
         each dog in getData('dogs')
           - var activeClass = dog[2] ? 'is-active' : '';
-          +e.BUTTON.button(type="button" class=activeClass).js-dog-button
+          +e.DIV.button(class=activeClass).js-dog-button
             +e.IMG.dog(src=dog[0])
             +e.P.weight!= dog[1]
             +icon('dog-bg').__icon
