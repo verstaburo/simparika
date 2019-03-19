@@ -148,12 +148,14 @@
     }
 
     p {
+
       &:not(:first-child) {
         margin-top: 13px;
       }
     }
 
     ul {
+
       &:not(:first-child) {
         margin-top: 13px;
       }

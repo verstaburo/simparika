@@ -2,7 +2,10 @@ mixin footer()
   +b.footer&attributes(attributes)
     +e.top
       .container.footer__warning-wrap
-        +e.P.warning ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ.  НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ  СО  СПЕЦИАЛИСТОМ
+        +e.warning
+          img(src="assets/images/warning_1.svg")
+          img(src="assets/images/warning_2.svg")
+          img(src="assets/images/warning_3.svg")
     +e.bottom
       .container.container_flex
         +e.grid

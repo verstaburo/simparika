@@ -1,35 +1,44 @@
 .article-card {
   display: block;
+  padding: 35px 55px 45px 35px;
+  border-radius: 15px;
+  background-color: rgba($color-yellow-3, .2);
+  transition: opacity $ease-main;
 
   @include screen('lg') {
-    padding: 33px 24px 34px;
-    background-color: $color-grey-light;
+    padding: 29px 24px 64px;
   }
 
   @include screen('sm') {
-    padding: 0 20px;
-    background-color: transparent;
+    padding: 21px 24px 38px;
+  }
+
+  &:hover {
+    opacity: .7;
   }
 
   $b: &;
 
-  &__image {
-    position: relative;
-    overflow: hidden;
-    height: 237px;
+  &_color {
 
-    @include screen('lg') {
-      display: none;
+    &_2 {
+      background-color: rgba($color-orange, .2);
     }
 
-    img {
-      transition: transform $ease-main;
+    &_3 {
+      background-color: $color-green-4;
+    }
 
-      @include fill-img;
+    &_4 {
+      background-color: $color-purple-2;
+    }
 
-      #{$b}:hover & {
-        transform: scale(1.15);
-      }
+    &_5 {
+      background-color: $color-blue-light-2;
+    }
+
+    &_6 {
+      background-color: rgba($color-brown, .2);
     }
   }
 
@@ -44,20 +53,16 @@
       font-size: 14px;
       line-height: 1.57;
     }
-
-    &:not(:first-child) {
-      margin-top: 50px;
-
-      @include screen('lg') {
-        margin-top: 0;
-      }
-    }
   }
 
   &__text {
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.72;
     color: rgba($color-grey-dark, .8);
+
+    @include screen('lg') {
+      line-height: 1.65;
+    }
 
     @include screen('sm') {
       font-size: 12px;
@@ -65,11 +70,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: 31px;
-
-      @include screen('lg') {
-        margin-top: 12px;
-      }
+      margin-top: 19px;
     }
   }
 }

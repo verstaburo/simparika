@@ -297,6 +297,7 @@
     }
 
     &.is-active {
+
       &::before {
         transform: scale(.9);
         opacity: 0;
@@ -385,6 +386,7 @@
   }
 
   &.is-empty {
+
     #{$b}__noresults {
       display: block;
     }

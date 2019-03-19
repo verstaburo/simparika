@@ -60,6 +60,7 @@
     &:checked {
 
       & + .checkradio__box {
+
         &::before {
           opacity: 1;
           transform: scale(1);

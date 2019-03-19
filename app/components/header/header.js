@@ -74,6 +74,10 @@ export default function heading () {
     } else {
       spirit.show();
     }
+
+    $(window).resize(function () {
+      spirit.height(footer.outerHeight());
+    });
   }
 
   function unfixPanel () {

@@ -110,8 +110,8 @@
       background-image: url('../images/spot_6.svg');
 
       @include screen('lg') {
-        top: 0px;
-        right: 0px;
+        top: 0;
+        right: 0;
         width: 89px;
         height: 58px;
       }
@@ -168,6 +168,7 @@
     }
 
     #{$b}_result & {
+
       &::before {
         top: auto;
         bottom: 84px;
@@ -185,11 +186,12 @@
       }
 
       span {
+
         &:first-child {
           background-image: url(../images/spot_8.svg);
           top: 45px;
           left: 62px;
-          bottom: 0px;
+          bottom: 0;
           right: 3px;
         }
 
@@ -301,6 +303,7 @@
     }
 
     p {
+
       &:not(:first-child) {
         margin-top: 32px;
 
@@ -326,6 +329,7 @@
   }
 
   &__options {
+
     &.is-disabled {
       pointer-events: none;
     }

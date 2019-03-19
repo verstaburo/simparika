@@ -10,7 +10,9 @@
     display: none;
 
     &:checked {
+
       & + #{$b}__box {
+
         &::before {
           opacity: 1;
           transform: scale(1);
@@ -69,12 +71,14 @@
     }
 
     #{$b}_plus & {
+
       &::before {
         background-image: url('../images/plus.svg');
       }
     }
 
     #{$b}_man & {
+
       &::before {
         background-image: url('../images/man.svg');
       }

@@ -39,7 +39,7 @@
       padding-bottom: 40px;
     }
 
-    /*#{$b}_small & {
+    /* #{$b}_small & {
       padding-top: 132px;
       padding-bottom: 318px;
 
@@ -52,7 +52,7 @@
         padding-top: 40px;
         padding-bottom: 98px;
       }
-    }*/
+    } */
   }
 
   &__header {
@@ -217,6 +217,16 @@
       background-position: center;
       will-change: transform;
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(black, .16);
+    }
   }
 
   &__poster {
@@ -242,17 +252,18 @@
 }
 
 // Скрываем кнопку плей на iOS
+
 *::-webkit-media-controls-panel {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }
 
 *::-webkit-media-controls-play-button {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }
 
 *::-webkit-media-controls-start-playback-button {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }

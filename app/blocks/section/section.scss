@@ -14,7 +14,7 @@
   $b: &;
 
   &_grey {
-    background-color: rgba(76, 76, 76, 0.04);
+    background-color: rgba(76, 76, 76, .04);
   }
 
   &_shops {
@@ -37,6 +37,7 @@
   }
 
   &_padding {
+
     &_one {
       padding-top: 39px;
       padding-bottom: 123px;
@@ -99,6 +100,7 @@
   }
 
   &_line {
+
     &::after {
       content: '';
       position: absolute;
@@ -156,6 +158,7 @@
     margin-right: auto;
 
     &_width {
+
       &_one {
         max-width: 760px;
       }
@@ -163,6 +166,7 @@
   }
 
   &__content {
+
     &:not(:first-child) {
       margin-top: 65px;
 
@@ -176,7 +180,9 @@
     }
 
     &_margin {
+
       &_one {
+
         &:not(:first-child) {
           margin-top: 76px;
 
@@ -191,6 +197,7 @@
       }
 
       &_two {
+
         &:not(:first-child) {
           margin-top: 147px;
 
@@ -205,6 +212,7 @@
       }
 
       &_three {
+
         &:not(:first-child) {
           margin-top: 124px;
 
@@ -219,6 +227,7 @@
       }
 
       &_four {
+
         &:not(:first-child) {
           margin-top: 58px;
 
@@ -250,7 +259,9 @@
     }
 
     &_margin {
+
       &_one {
+
         &:not(:first-child) {
           margin-top: 78px;
 

@@ -32,6 +32,14 @@
   &_full {
     width: 100%;
   }
+
+  &_small {
+    max-width: 880px;
+
+    @include screen('lg') {
+      max-width: 690px;
+    }
+  }
 }
 
 html {

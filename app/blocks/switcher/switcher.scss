@@ -17,7 +17,7 @@ $padding: $height/2;
       font-size: 14px;
     }
 
-    &:first-letter {
+    &::first-letter {
       text-transform: uppercase;
     }
   }

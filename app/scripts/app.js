@@ -12,6 +12,7 @@ import products from '../components/products/products';
 import videoBlock from '../components/video-block/video-block';
 import mytest from '../blocks/test/test';
 import accordeon from '../blocks/accordeon/accordeon';
+import share from '../blocks/share/share';
 
 const $ = window.$;
 
@@ -29,4 +30,5 @@ $(() => {
   mytest();
   parallax();
   accordeon();
+  share();
 });

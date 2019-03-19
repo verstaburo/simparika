@@ -59,6 +59,7 @@
     }
 
     #{$b}__head.is-active & {
+
       &::after {
         transform: rotate(180deg);
       }
@@ -84,6 +85,7 @@
   }
 
   &_margin {
+
     &_one {
       margin-top: 74px;
 

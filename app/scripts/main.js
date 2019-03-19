@@ -210,4 +210,8 @@ function shopPage () {
 }
 
 shopPage();
+
+// Фон хлебных крошек
+$('.breadcrumbs + .section_grey').prev('.breadcrumbs').addClass('breadcrumbs_grey');
+
 /* eslint-enable */

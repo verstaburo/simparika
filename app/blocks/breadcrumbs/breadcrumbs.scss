@@ -16,6 +16,10 @@
     background-color: $color-main;
   }
 
+  &_grey {
+    background-color: rgba(76, 76, 76, .04);
+  }
+
   &__list {
     font-size: 0;
   }
