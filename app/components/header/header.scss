@@ -18,11 +18,11 @@
   $b: &;
 
   @include screen('lg') {
-    padding: 17px 0;
+    padding: 8px 0;
   }
 
   @include screen('sm') {
-    padding: 19px 0 20px;
+    padding: 16px 0;
   }
 
   &__container {
@@ -57,7 +57,7 @@
       }
 
       @include screen('sm') {
-        width: 121px;
+        width: 98px;
       }
     }
   }
@@ -169,6 +169,8 @@
   }
 
   &__button {
+    margin-left: 27px;
+
     @include screen('lg') {
       background-color: transparent;
       line-height: normal;
@@ -177,6 +179,7 @@
       font-weight: 500;
       padding: 0;
       height: auto;
+      margin-left: 0;
     }
 
     @include screen('sm') {
@@ -184,8 +187,21 @@
     }
   }
 
-  &__burger {
+  &__mobilebutton {
     margin-left: auto;
+
+    @include screen('lg', min) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 
     @include screen('lg', min) {
       display: none;
